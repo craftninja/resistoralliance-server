@@ -7,6 +7,8 @@
 
 ### What do we want to do next:
 
+1. Create front end app
+1. Deploy them both
 1. Landing page - Public
   * Logo
   * Blurb
