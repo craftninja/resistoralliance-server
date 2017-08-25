@@ -75,3 +75,28 @@
 
   * remove public folder
   * change renders to json in index and users routes
+1. Add tests for updated index routes (test last??? :sob:)
+  * `$ yarn add mocha --dev`
+  * add script to package.json `"test": "mocha --recursive"`
+  * ran tests - no test files
+  * create a new file at `test/features/index.test.js` with the following content
+
+    ```js
+    const expect = require('expect');
+    const request = require('supertest');
+
+    const app = require('../../app.js')
+
+    describe ('Rootpath', () => {
+      it ('welcomes you', async() => {
+        const res = await request(app)
+          .get('/')
+          .send()
+          .expect(200);
+        expect(res.body).toEqual("Welcome to Shawna's totes kew app! Also, get out of here, and go to our real app at http://resistoralliance.herokuapp.com/")
+      })
+    });
+    ```
+
+  * `$ yarn add supertest --dev`
+  * `$ yarn add expect --dev`
