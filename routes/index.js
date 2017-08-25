@@ -1,9 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.json("Welcome to Shawna's totes kew app! Also, get out of here, and go to our real app at http://resistoralliance.herokuapp.com/");
 });
 
 module.exports = router;

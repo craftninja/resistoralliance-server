@@ -37,4 +37,41 @@
   * `$ touch README.md` and start taking awesome notes
   * `$ git add .`
   * `$ git commit -m "sweet message!"`
-1.
+1. API-ify
+  * delete views folder
+  * remove from package: jade, serve-favicon
+  * remove from app.js
+
+    ```js
+    // view engine setup
+    app.set('views', path.join(__dirname, 'views'));
+    app.set('view engine', 'jade');
+    ```
+
+    ```js
+    // uncomment after placing your favicon in /public
+    //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+    ```
+
+    ```js
+    app.use(express.static(path.join(__dirname, 'public')));
+    ```
+  * change in app.js...
+
+    remove this:
+
+    ```js
+    res.render('error');
+    ```
+
+    add this:
+
+    ```js
+    res.json({
+      status: err.status,
+      message: err.message,
+    });
+    ```
+
+  * remove public folder
+  * change renders to json in index and users routes
