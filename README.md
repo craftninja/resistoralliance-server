@@ -1,5 +1,9 @@
 # README
 
+## Related repositories
+
+[client](https://github.com/craftninja/resistoralliance)
+
 ### Get this puppy up and running
 
 1. fork, clone, yarn install
